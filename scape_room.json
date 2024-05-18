@@ -1,0 +1,77 @@
+{
+  "start": [
+    {
+      "id": "start",
+      "descripcion": "¿De qué trata el juego?",
+      "siguiente_destino": "http://localhost:3000/aeropuerto"
+    }
+  ],
+  "aeropuerto": [
+    {
+      "id": "✈️",
+      "enigma": "Desde la ciudad de Gaudí, un cruce de caminos donde despegan sueños. ¿Cuál es este portal que da inicio a innumerables viajes?. Sin espacios.",
+      "siguiente_destino": "http://localhost:3000/destinos/{respuesta}"
+    }
+  ],
+  "destinos": [
+    {
+      "id": "elprat",
+      "exito": "¡Correcto! Prepárate para tu próxima parada: La Biblioteca de Alejandría.",
+      "siguiente_destino": "http://localhost:3000/pyramid"
+    }
+  ],
+  "pyramid": [
+    {
+      "id": "pyramid",
+      "enigma": "¿Suicidio o asesinato? Introduce el nombre de la faraona más famosa de Egipto.",
+      "pista": "Haz un POST cuyo endpoint sea la respuesta al enigma. A continuación haz un GET para ver el resultado del POST realizado."
+    }
+  ],
+  "cleopatra": [
+    {
+      "id": "Cleopatra",
+      "exito": "¡Correcto! Prepárate para tu próxima parada: el Partenón en Grecia.",
+      "siguiente_destino": "http://localhost:3000/greece"
+    }
+  ],
+  "greece": [
+    {
+      "id": "Greece",
+      "enigma": "Arrancada de los campos floridos por el señor del inframundo, esta diosa se convierte en la reina de un reino sin sol. ¿Quién es ella que ahora divide su tiempo entre dos mundos?",
+      "pista": "Su retorno marca el inicio de la primavera. Su captor es el guardián del reino a quien debes eliminar.",
+      "endpoint": "http://localhost:3000/_resultado_greece/{respuesta}"
+    }
+  ],
+  "resultado_greece": [
+    {
+      "id": "Hades",
+      "descripcion": "Eliminar a este guardián oscuro te permite acceder al siguiente destino."
+    },
+    {
+      "id": "Persefone",
+      "descripcion": "Ella no debe ser eliminada; su presencia es crucial para el ciclo de las estaciones.",
+      "siguiente_destino": "http://localhost:3000/China"
+    }
+  ],
+  "China": [
+    {
+      "id": "China",
+      "descripcion": "Te encuentras en el corazón del vasto imperio oriental, cuna de antiguas dinastías y maravillas arquitectónicas. Una de estas maravillas es una gigantesca estructura construida para proteger contra las invasiones. Pero para avanzar, debes descubrir su nombre.",
+      "pista": "Haz un PUT en el siguiente endpoint que es http://localhost:3000/adivina/respuesta"
+    }
+  ],
+  "adivina": [
+    {
+      "id": "respuesta",
+      "pista": "Esta estructura es visible desde el espacio y se extiende por miles de kilómetros a través de montañas y desiertos.",
+      "respuesta": "muralla_china",
+      "siguiente_destino": "http://localhost:3000/muralla_china"
+    }
+  ],
+  "muralla_china": [
+    {
+      "id": "Final",
+      "exito": "¡Correcto! Aqui finaliza tu aventura, ¡¡¡¡¡ESPERO QUE LO HAYAIS PASADO BIEN!!!!!!"
+    }
+  ]
+}
